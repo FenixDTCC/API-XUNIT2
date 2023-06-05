@@ -28,5 +28,6 @@ namespace QuantoDemoraApi.Models
         public Associado Associado { get; set; }
         public int IdAssociado { get; set; }
         public int TempoAtendimento { get; set; }
+
     }
 }

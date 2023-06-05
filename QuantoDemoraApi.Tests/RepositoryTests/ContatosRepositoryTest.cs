@@ -53,24 +53,21 @@ namespace QuantoDemoraApi.Tests.RepositoryTests
             using var context = new DataContext(_options);
             var repo = new ContatosRepository(context);
 
-            var tc = new Contato
+            var tc = new List<Contato<Hospital>>
             {
-                IdHospital = 1,
-                IdContato = 1,
-                IdTipoContato = 1,
-                DsContato = "(11) 3758-5202",
-                InfoContato = null
+            new Hospital {IdHospital = 1, Cnpj = 1, RazaoSocial = 1, DsContato = "(11) 3758-5202", InfoContato = null},
+           
             };
             context.Contatos.Add(tc);
             await context.SaveChangesAsync();
 
             //Act
-            var result = await repo.GetByIdAsync(tc.IdContato);
+            var result = await repo.GetByIdAsync( tc.IdHospital);
 
             //Assert
             Assert.NotNull(result);
-            Assert.Equal(tc.IdContato, result.IdContato);
             Assert.Equal(tc.IdHospital, result.IdHospital);
+            Assert.Equal(tc.IdContato, result.IdContato);
             Assert.Equal(tc.IdTipoContato, result.IdTipoContato);
             Assert.Equal(tc.DsContato, result.DsContato);
             Assert.Equal(tc.InfoContato, result.InfoContato);

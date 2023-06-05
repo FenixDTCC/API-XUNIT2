@@ -31,15 +31,13 @@ namespace QuantoDemoraApi.Tests.RepositoryTests
             _repository = new AtendimentosRepository(_context);
         }
 
-       /* [Fact]
+        [Fact]
         public async void GetAllAsync_RetornarListaAtendimento()
         {
             // Arrange
             var tc = new List<Atendimento>
         {
-            new Atendimento {IdAtendimento = 1, IdHospital = 1, IdEspecialidade= 1, IdentificacaoAtendimento = 1, IdAssociado = 1, TempoAtendimento = 12, SenhaAtendimento=2},
-            new Atendimento {IdAssociado = 1, NomeAssociado = "Roberto", SobrenomeAssociado = "Matas", Cpf = "255.255.255-25", DddCelular = "11", Email ="matas@gmail.com", NroCelular="99292929", Sexo='M'},
-            new Atendimento {IdAssociado = 1, NomeAssociado = "Carlos", SobrenomeAssociado = "Dantas", Cpf = "255.255.255-25", DddCelular = "11", Email ="dantas@gmail.com", NroCelular="99292929", Sexo='M'}
+            new Atendimento {IdAtendimento = 1, IdHospital = 1, IdEspecialidade= 1, /*IdentificacaoAtendimento[] = 1,"d","d",*/ IdAssociado = 1, TempoAtendimento = 1, SenhaAtendimento="2"}
         };
             _mockRepository.Setup(x => x.GetAllAsync()).ReturnsAsync(tc);
 
@@ -48,6 +46,6 @@ namespace QuantoDemoraApi.Tests.RepositoryTests
 
             //Assert
             Assert.IsType<List<Atendimento>>(result);
-        }*/
+        }
     }
 }
