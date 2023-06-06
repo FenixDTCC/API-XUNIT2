@@ -37,7 +37,7 @@ namespace QuantoDemoraApi.Tests.RepositoryTests
             // Arrange
             var tc = new List<Atendimento>
         {
-            new Atendimento {IdAtendimento = 1, IdHospital = 1, IdEspecialidade= 1, /*IdentificacaoAtendimento[] = 1,"d","d",*/ IdAssociado = 1, TempoAtendimento = 1, SenhaAtendimento="2"}
+            new Atendimento {IdAtendimento = 1, IdHospital = 1, IdEspecialidade= 1, IdIdentificacaoAtendimento = 1, IdAssociado = 1, TempoAtendimento = 1, SenhaAtendimento="2"}
         };
             _mockRepository.Setup(x => x.GetAllAsync()).ReturnsAsync(tc);
 
