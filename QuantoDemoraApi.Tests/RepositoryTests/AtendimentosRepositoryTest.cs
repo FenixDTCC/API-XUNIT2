@@ -47,5 +47,22 @@ namespace QuantoDemoraApi.Tests.RepositoryTests
             //Assert
             Assert.IsType<List<Atendimento>>(result);
         }
+
+        /*[Fact]
+        public async void GetByIdAsync_RetornarAtendimentoPeloIdInformado()
+        {
+
+            var tc = new List<Atendimento>
+            {
+                new Atendimento {IdAtendimento = 1, IdHospital = 1, IdEspecialidade= 1, IdIdentificacaoAtendimento = 1, IdAssociado = 1, TempoAtendimento = 1, SenhaAtendimento="2"}
+            };
+            _mockRepository.Setup(x => x.GetByIdAsync(hospitalId)).ReturnsAsync();
+
+            //Act
+            var result = await _repository.GetByIdAsync(hospitalId);
+
+            //Assert
+            Assert.IsType<List<Atendimento>>(result);
+        }*/
     }
 }

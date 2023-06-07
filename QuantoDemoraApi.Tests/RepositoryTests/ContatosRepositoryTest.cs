@@ -46,28 +46,33 @@ namespace QuantoDemoraApi.Tests.RepositoryTests
             Assert.IsType<List<Contato>>(result);
         }
 
-        /*[Fact]
-        public async void GetByIdAsync_RetornarContatoPeloIdInformado()
-        {
-            //Arrange
-            using var context = new DataContext(_options);
-            var repo = new ContatosRepository(context);
+        //[Fact]
+        //public async void GetByIdAsync_RetornarAtendimentoPeloIdInformado()
+        //{
+        //    using var context = new DataContext(_options);
+        //    var repo = new EspecialidadesRepository(context);
+
+        //    //var hosp = new Hospital();
 
 
-            var tc = new List<Contato>
-            {
-            new Contato {IdHospital = 1, IdContato = 1, IdTipoContato = 1, TipoContatoEnum = 0, DsContato="(11) 3758-5202"/* ,Hospital = null, InfoContato = null, TipoContato = null}
-            };
-            context.Contatos.Add(tc);
-            await context.SaveChangesAsync();
+        //    List<Contato> tc = new List<Contato>
+        //    {
+        //        new Contato {IdHospital = 1, IdContato = 1, IdTipoContato = 1, DsContato = "(11) 3758-5202", InfoContato = null},
+        //        new Contato {IdHospital = 1, IdContato = 1, IdTipoContato = 1, DsContato = "(11) 3758-5202", InfoContato = null},
+        //        new Contato {IdHospital = 1, IdContato = 1, IdTipoContato = 1, DsContato = "(11) 3758-5202", InfoContato = null}
+        //    };
 
-            _mockRepository.Setup(x => x.GetByIdAsync(tc.IdHospital)).ReturnsAsync(tc);
+        //    context.Contatos.Add(tc);
+        //    await context.SaveChangesAsync();
 
-            //Act
-            var result = await repo.GetByIdAsync(tc.IdHospital);
+        //    _mockRepository.Setup(x => x.GetByIdAsync(tc.IdHospital)).ReturnsAsync(tc);
 
-            //Assert
-            Assert.IsType<List<Contato>>(result);
-        }*/
+        //    //Act
+        //    var result = await repo.GetByIdAsync(tc.Id);
+
+        //    //Assert
+        //    Assert.IsType<List<Contato>>(result);
+        //    //Assert.IsType<int>();
+        //}
     }
 }

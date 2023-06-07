@@ -33,7 +33,7 @@ public class TiposContatoRepositoryTests
         {
             new TipoContato {IdTipoContato = 1, DsTipoContato = "Telefone"},
             new TipoContato {IdTipoContato = 2, DsTipoContato = "E-mail"},
-            new TipoContato {IdTipoContato = 1, DsTipoContato = "WhatsApp"}
+            new TipoContato {IdTipoContato = 3, DsTipoContato = "WhatsApp"}
         };
         _mockRepository.Setup(x => x.GetAllAsync()).ReturnsAsync(tc);
 
