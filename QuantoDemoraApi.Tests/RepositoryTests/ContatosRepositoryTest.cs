@@ -13,6 +13,7 @@ namespace QuantoDemoraApi.Tests.RepositoryTests
         private readonly DbContextOptions<DataContext> _options;
         private readonly DataContext _context;
         private readonly Mock<IContatosRepository> _mockRepository;
+        private readonly int hospitalId = 1;
         private ContatosRepository _repository;
 
 
@@ -45,6 +46,30 @@ namespace QuantoDemoraApi.Tests.RepositoryTests
             //Assert
             Assert.IsType<List<Contato>>(result);
         }
+
+        [Fact]
+        public async void GetByIdAsync_RetornarListaContatosPeloIdInformado()
+        {
+            using var context = new DataContext(_options);
+            var repo = new ContatosRepository(context);
+
+            var tc = new List<Contato>
+            {
+                new Contato {IdHospital = 1, IdContato = 1, IdTipoContato = 1, DsContato = "(11) 3758-5202", InfoContato = null},
+                new Contato {IdHospital = 2, IdContato = 2, IdTipoContato = 2, DsContato = "(11) 3758-5202", InfoContato = null},
+                new Contato {IdHospital = 3, IdContato = 3, IdTipoContato = 3, DsContato = "(11) 3758-5202", InfoContato = null}
+            };
+
+            context.Contatos.AddRange(tc);
+            await context.SaveChangesAsync();
+
+            // Act
+            var result = await repo.GetByIdAsync(hospitalId);
+            Assert.IsType<List<Contato>>(result);
+            //    //Assert.IsType<int>();
+        }
+
+
 
         //[Fact]
         //public async void GetByIdAsync_RetornarAtendimentoPeloIdInformado()
